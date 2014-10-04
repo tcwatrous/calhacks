@@ -6,6 +6,8 @@ var userSchema = new mongoose.Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String,
 
+  pubid: { type: String, unique: true },
+
   facebook: String,
   twitter: String,
   google: String,
@@ -21,6 +23,8 @@ var userSchema = new mongoose.Schema({
     website: { type: String, default: '' },
     picture: { type: String, default: '' }
   },
+
+  shirts: Array,
 
   resetPasswordToken: String,
   resetPasswordExpires: Date

@@ -93,7 +93,8 @@ exports.postSignup = function(req, res, next) {
 
   var user = new User({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    pubid: Math.floor((Math.random()*90000000) + 10000000)
   });
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {
@@ -121,6 +122,7 @@ exports.getAccount = function(req, res) {
     title: 'Account Management'
   });
 };
+
 
 /**
  * POST /account/profile
@@ -376,5 +378,24 @@ exports.postForgot = function(req, res, next) {
   ], function(err) {
     if (err) return next(err);
     res.redirect('/forgot');
+  });
+};
+
+
+/**
+ * GET /account/unlink/:provider
+ * Unlink OAuth provider.
+ * @param provider
+ */
+
+exports.getPublic = function(req, res, next) {
+  var pubid = req.params.pubid;
+  User.findOne({ "pubid" : pubid } , function(err, user) {
+    if (err) return next(err);
+
+    res.render('/', {
+      title : pubid
+    });
+    
   });
 };
