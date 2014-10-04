@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+  h1 These Are All the Shirts
+  .row
+    each shirt in shirts
+      .col-sm-4
+        .panel.panel-default
+          .panel-body
+            img.toggle(src='img/tshirts/'+shirt.title+'.png', width="100%;")
