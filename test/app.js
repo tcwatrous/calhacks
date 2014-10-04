@@ -25,10 +25,10 @@ describe('GET /signup', function() {
   });
 });
 
-describe('GET /collection', function() {
+describe('GET /api', function() {
   it('should return 200 OK', function(done) {
     request(app)
-      .get('/collection')
+      .get('/api')
       .expect(200, done);
   });
 });
