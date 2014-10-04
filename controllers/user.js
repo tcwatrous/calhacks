@@ -388,14 +388,12 @@ exports.postForgot = function(req, res, next) {
  * @param provider
  */
 
-exports.getPublic = function(req, res, next) {
+exports.getCollection = function(req, res) {
   var pubid = req.params.pubid;
   User.findOne({ "pubid" : pubid } , function(err, user) {
     if (err) return next(err);
 
-    res.render('/', {
-      title : pubid
-    });
-    
+    res.render('ts/collection', { title : 'Collection', shirts : user.shirts });
   });
+    
 };
