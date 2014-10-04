@@ -2,6 +2,7 @@ extends layout
 
 block content
 
+
   h1 These Are All the Shirts
   .row
     each shirt in shirts
@@ -9,4 +10,5 @@ block content
         .panel.panel-default
           .panel-body.text-align-center
             img.toggle(src='img/tshirts/'+shirt.title+'.png', width="100%;")
-            button.btn.shirt-btn(type='button') Add to Collection
+            if user
+              button.btn.shirt-btn(type='button') Add to Collection
