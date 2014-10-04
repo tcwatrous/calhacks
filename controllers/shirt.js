@@ -11,10 +11,3 @@ exports.getShirts = function(req, res) {
 };
 
 
-/**
- * POST new shirt for auth'd user
- *
- */
-exports.addShirt = function(req, res) {
-  Shirt.find
-}

@@ -397,3 +397,11 @@ exports.getCollection = function(req, res) {
   });
     
 };
+
+/**
+ * POST new shirt for auth'd user
+ *
+ */
+exports.addShirt = function(req, res) {
+
+}

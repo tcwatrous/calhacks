@@ -137,6 +137,7 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/ts/:pubid',userController.getCollection);
 app.get('/shirts',shirtController.getShirts);
+app.post('/addshirt/:shirt',shirtController.addShirt);
 
 /**
  * API examples routes.
